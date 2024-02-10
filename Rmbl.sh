@@ -7,7 +7,7 @@ dns2=*.${sub}.pirang.cloud
 CF_ID=kadeknovi148@gmail.com
 CF_KEY=45c11fd84f3ee1ce33070b0b653044e33b051
 set -euo pipefail
-IP=${ip};
+IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
 -H "X-Auth-Email: ${CF_ID}" \
@@ -50,7 +50,7 @@ dns2=*.${sub}.pirang.cloud
 CF_ID=kadeknovi148@gmail.com
 CF_KEY=45c11fd84f3ee1ce33070b0b653044e33b051
 set -euo pipefail
-IP=${ip};
+IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
 -H "X-Auth-Email: ${CF_ID}" \
