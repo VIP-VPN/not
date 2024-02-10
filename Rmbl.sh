@@ -1,30 +1,5 @@
 #!/bin/bash
-Green="\e[92;1m"
-RED="\033[31m"
-YELLOW="\033[33m"
-BLUE="\033[36m"
-FONT="\033[0m"
-GREENBG="\033[42;37m"
-REDBG="\033[41;37m"
-OK="${Green}--->${FONT}"
-ERROR="${RED}[ERROR]${FONT}"
-GRAY="\e[1;30m"
-NC='\e[0m'
-red='\e[1;31m'
-green='\e[0;32m'
-#pointing domain ke cloudflare
 apt install jq curl -y
-clear
-
-echo -e ""
-echo -e "${BLUE}┌──────────────────────────────────────────┐${NC}"
-echo -e "${BLUE}│        AUTO SCRIPT BY RMBL VPN           │${NC}"
-echo -e "${BLUE}│   SCRIPT POINTING DOMAIN KE CLOUDFLARE   │${NC}"
-echo -e "${BLUE}└──────────────────────────────────────────┘${NC}"
-echo -e ""
-read -rp "Input subdomain: " -e sub
-read -rp "Input ip vps: " -e ip
-
 DOMAIN=pirang.cloud
 sub=$(cat /root/subdomainx)
 dns=${sub}.pirang.cloud
@@ -112,12 +87,3 @@ echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
 echo "IP=$dns" > /var/lib/ipvps.conf
 cd
-echo -e ""
-echo -e "${BLUE}┌──────────────────────────────────────────┐${NC}"
-echo -e "${BLUE}│   POINTING DOMAIN KE CLOUDFLARE SELESAI  │${NC}"
-echo -e "${BLUE}└──────────────────────────────────────────┘${NC}"
-echo -e ""
-rm -rf Rmbl.sh
-echo -e "System akan reboot setelah 3 detik"
-sleep 3
-reboot
